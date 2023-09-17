@@ -180,7 +180,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {penelitian.totalData}
+                  {penelitian.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Penelitian</p>
               </Card.Body>
