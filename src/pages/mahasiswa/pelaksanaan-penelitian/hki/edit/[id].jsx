@@ -41,7 +41,6 @@ export default function HkiEdit() {
     judul_hki: "",
     tgl_terbit_hki: "",
     keterangan_hki: "",
-    keterangan: "",
     nama_dok: "",
     keterangan_dok: "",
     tautan_dok: "",
@@ -142,6 +141,7 @@ export default function HkiEdit() {
                     value: item.id,
                   }))
                 }
+                disabled
               />
             </Form.Group>
             <Form.Group className="flex items-baseline gap-3">

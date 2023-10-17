@@ -15,6 +15,7 @@ import useDosen from "../../../../repo/dosen";
 import useMahasiswa from "../../../../repo/mahasiswa";
 import { ROLE_ID_DOSEN, ROLE_ID_MAHASISWA } from "../../../../config/role";
 import _ from "underscore";
+import useKategoriPublikasi from "../../../../repo/kategori-publikasi";
 
 export default function PenelitianCreate() {
   const router = useRouter();
@@ -31,6 +32,7 @@ export default function PenelitianCreate() {
   };
 
   const INITIAL_FORM = {
+    kategori_id: "",
     judul_kegiatan: "",
     kelompok_bidang: "",
     lokasi_kegiatan: "",
@@ -68,6 +70,9 @@ export default function PenelitianCreate() {
 
   const { form, inputHandler, setForm } = formdata;
 
+  const { data: kategoriPublikasi, isLoading: isLoadingKategoriPublikasi } =
+    useKategoriPublikasi([user]);
+
   const { data: listDosen, isLoading: isDosenLoading } = useDosen([user]);
   const { data: listMahasiswa, isLoading: isMahasiswaLoading } = useMahasiswa([
     user,
@@ -94,9 +99,13 @@ export default function PenelitianCreate() {
   }, [user]);
 
   if (
-    [user, menu, isDosenLoading, isMahasiswaLoading].some(
-      (item) => item == null
-    )
+    [
+      user,
+      menu,
+      isDosenLoading,
+      isMahasiswaLoading,
+      isLoadingKategoriPublikasi,
+    ].some((item) => item == null)
   )
     return <p>Loading...</p>;
   return (
@@ -106,6 +115,26 @@ export default function PenelitianCreate() {
         <Card className="mt-4">
           <Card.Header className="text-center">Penelitian</Card.Header>
           <Card.Body className="space-y-4">
+            <Form.Group className="flex items-baseline gap-3">
+              <Form.Label className="min-w-[18rem]">
+                Kategori Publikasi <span className="text-danger-600">*</span>
+              </Form.Label>
+              <span>:</span>
+              <Form.Select
+                className="flex-1"
+                name="kategori_id"
+                value={form.kategori_id}
+                onChange={inputHandler}
+                options={
+                  kategoriPublikasi &&
+                  kategoriPublikasi.map((item) => ({
+                    label: `${item.nama_kategori} - ${item.tingkatan}`,
+                    value: item.id,
+                  }))
+                }
+                required
+              />
+            </Form.Group>
             <Form.Group className="flex items-baseline gap-3">
               <Form.Label className="min-w-[18rem]">
                 Judul Kegiatan <span className="text-danger-600">*</span>

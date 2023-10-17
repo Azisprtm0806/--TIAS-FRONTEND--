@@ -39,6 +39,11 @@ export default function KepangkatanModule({ baseURL }) {
 							</div>
 						</th>
 						<th className="text-sm border-2 border-white bg-gray-200">
+              <div className="flex items-center gap-2 cursor-pointer">
+                Status
+              </div>
+            </th>
+						<th className="text-sm border-2 border-white bg-gray-200">
 							<div className="flex items-center gap-2 cursor-pointer" onClick={() => sortBy("gol_pangkat")}>
 								Golongan/Pangkat
 								<SortIcon sort={getSortBy("gol_pangkat")} />
@@ -85,6 +90,23 @@ export default function KepangkatanModule({ baseURL }) {
 						data.map((row, index) => (
 							<tr key={`row-${index}`}>
 								<td className="text-sm border-2 border-white bg-gray-50">{index + 1}</td>
+								<td className="text-sm border-2 border-white bg-gray-50 max-w-[12rem] truncate">
+                  {row.status == 0 && (
+                    <span className="text-base font-bold text-yellow-400">
+                      Proses
+                    </span>
+                  )}
+                  {row.status == 1 && (
+                    <span className="text-base font-bold text-green-400">
+                      Diterima
+                    </span>
+                  )}
+                  {row.status == 2 && (
+                    <span className="text-base font-bold text-red-400">
+                      Ditolak
+                    </span>
+                  )}
+                </td>
 								<td className="text-sm border-2 border-white bg-gray-50">{row.gol_pangkat}</td>
 								<td className="text-sm border-2 border-white bg-gray-50">{row.nomor_sk}</td>
 								<td className="text-sm border-2 border-white bg-gray-50">{date.formatToID(new Date(row.tgl_mulai))}</td>

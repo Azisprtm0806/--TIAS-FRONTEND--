@@ -6,7 +6,7 @@ import { Icon } from "@iconify-icon/react";
 import useCRUD from "../../../hooks/useCRUD";
 
 export default function CreateDokumen({ id }) {
-  const API_URL = `${process.env.API_ENDPOINT}/pembicara/addDokumenPembicara`;
+  const API_URL = `${process.env.API_ENDPOINT}/pengabdian/pembicara/addDokumenPembicara`;
   const INITIAL_FORM = {
     ...id,
     nama_dok: "",

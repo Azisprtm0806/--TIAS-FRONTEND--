@@ -74,7 +74,7 @@ export default function KeluargaEdit() {
 						</Form.Group>
 						<Form.Group className="flex items-baseline gap-3">
 							<Form.Label className="w-[18rem]">
-								NIP Suami/Istri <span className="text-danger-600">*</span>
+								NIP Suami/Istri 
 							</Form.Label>
 							<span>:</span>
 							<Form.Input
@@ -83,12 +83,12 @@ export default function KeluargaEdit() {
 								name="nip_pasangan"
 								onChange={inputHandler}
 								value={form.nip_pasangan}
-								required
+								
 							/>
 						</Form.Group>
 						<Form.Group className="flex items-baseline gap-3">
 							<Form.Label className="w-[18rem]">
-								Pekerjaan Suami/Istri <span className="text-danger-600">*</span>
+								Pekerjaan Suami/Istri 
 							</Form.Label>
 							<span>:</span>
 							<Form.Input
@@ -97,12 +97,12 @@ export default function KeluargaEdit() {
 								name="pekerjaan_pasangan"
 								onChange={inputHandler}
 								value={form.pekerjaan_pasangan}
-								required
+								
 							/>
 						</Form.Group>
 						<Form.Group className="flex items-baseline gap-3">
 							<Form.Label className="w-[18rem]">
-								Terhitung Mulai Tanggal PNS Suami/Istri <span className="text-danger-600">*</span>
+								Terhitung Mulai Tanggal PNS Suami/Istri 
 							</Form.Label>
 							<span>:</span>
 							<Form.Input
@@ -111,7 +111,7 @@ export default function KeluargaEdit() {
 								name="tanggal_pns_pasangan"
 								onChange={inputHandler}
 								value={form.tanggal_pns_pasangan}
-								required
+								
 							/>
 						</Form.Group>
 					</Card.Body>

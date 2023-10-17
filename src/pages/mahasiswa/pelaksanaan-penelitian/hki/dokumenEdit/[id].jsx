@@ -102,14 +102,14 @@ const DokumenEdit = () => {
             </Form.Group>
             <Form.Group className="flex items-baseline gap-3">
               <Form.Label className="min-w-[18rem]">
-                Unggah File <span className="text-danger-600">*</span>
+                FIle <span className="text-danger-600">*</span>
               </Form.Label>
               <span>:</span>
               <div className="block flex-1 space-y-2">
                 <Form.Input
                   type="file"
                   className="flex-1"
-                  name="file"
+                  name="file_profesi"
                   onChange={inputHandler}
                 />
                 <embed

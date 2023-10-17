@@ -19,7 +19,7 @@ export default function Home() {
   const DATA_URL = `${process.env.API_ENDPOINT}/kompetensi/getCertificate`;
   const DATA_TES = `${process.env.API_ENDPOINT}/kompetensi/getTes`;
   const DATA_PEMBICARA = `${process.env.API_ENDPOINT}/pengabdian/pembicara/getDataPembicara`;
-  // const DATA_PENGABDIAN = `${process.env.API_ENDPOINT}/pengabdian/pengabdian/getDataPengabdian`;
+  const DATA_PENGABDIAN = `${process.env.API_ENDPOINT}/pengabdian/getDataPengabdian`;
   const DATA_PENGHARGAAN = `${process.env.API_ENDPOINT}/penunjang/getPenghargaan`;
   const DATA_PENELITIAN = `${process.env.API_ENDPOINT}/penelitian/getDataPenelitian`;
   const DATA_PUBLIKASI = `${process.env.API_ENDPOINT}/penelitian/publikasi-karya/getPublikasi`;
@@ -28,7 +28,7 @@ export default function Home() {
   const sertifikasi = useDatatable(DATA_URL);
   const tes = useDatatable(DATA_TES);
   const pembicara = useDatatable(DATA_PEMBICARA);
-  // const pengabdian = useDatatable(DATA_PENGABDIAN);
+  const pengabdian = useDatatable(DATA_PENGABDIAN);
   const penghargaan = useDatatable(DATA_PENGHARGAAN);
   const penelitian = useDatatable(DATA_PENELITIAN);
   const publikasiKarya = useDatatable(DATA_PUBLIKASI);
@@ -102,7 +102,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {tes.totalData}
+                  {tes.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Tes</p>
               </Card.Body>
@@ -118,7 +118,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {sertifikasi.totalData}
+                  {sertifikasi.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Sertifikat</p>
               </Card.Body>
@@ -134,7 +134,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {pembicara.totalData}
+                  {pembicara.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Pembicara</p>
               </Card.Body>
@@ -149,7 +149,9 @@ export default function Home() {
                     className="text-white"
                   />
                 </div>
-                <p className="block text-2xl font-bold leading-relaxed">75</p>
+                <p className="block text-2xl font-bold leading-relaxed">
+                  {pengabdian.totalDataAcc}
+                </p>
                 <p className="block text-sm">Total Pengabdian</p>
               </Card.Body>
             </Card>
@@ -164,7 +166,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {penghargaan.totalData}
+                  {penghargaan.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Penghargaan</p>
               </Card.Body>
@@ -196,7 +198,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {publikasiKarya.totalData}
+                  {publikasiKarya.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total Publikasi Karya</p>
               </Card.Body>
@@ -212,7 +214,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="block text-2xl font-bold leading-relaxed">
-                  {hki.totalData}
+                  {hki.totalDataAcc}
                 </p>
                 <p className="block text-sm">Total HKI</p>
               </Card.Body>

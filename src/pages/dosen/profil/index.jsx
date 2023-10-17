@@ -18,7 +18,7 @@ import useModal from "../../../hooks/useModal";
 import useForm from "../../../hooks/useForm";
 import Modal from "../../../components/Modal";
 import axios from "axios";
-import { loadingAlert, toastAlert } from "../../../lib/sweetalert";
+import { MySwal, loadingAlert, toastAlert } from "../../../lib/sweetalert";
 
 export default function Profil() {
 	const { user } = useUser({ redirectTo: "/login" });

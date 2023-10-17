@@ -4,6 +4,8 @@ import Filter from "./filter";
 import SortIcon from "../../../../components/SortIcon";
 import Button from "../../../../components/Button";
 import Pagination from "../../../../components/Pagination";
+import date from "../../../../utils/date";
+
 import { MySwal, loadingAlert } from "../../../../lib/sweetalert";
 import axios from "axios";
 
@@ -107,7 +109,12 @@ export default function PengabdianModule({ baseURL }) {
               </div>
             </th>
             <th className="text-sm border-2 border-white bg-gray-200">
-              <div className="flex items-center gap-2 cursor-pointer">NPM</div>
+              <div className="flex items-center gap-2 cursor-pointer">Nama</div>
+            </th>
+            <th className="text-sm border-2 border-white bg-gray-200">
+              <div className="flex items-center gap-2 cursor-pointer">
+                NPM/NIDN
+              </div>
             </th>
             <th className="text-sm border-2 border-white bg-gray-200">
               <div
@@ -186,7 +193,11 @@ export default function PengabdianModule({ baseURL }) {
                 </td>
 
                 <td className="text-sm border-2 border-white bg-gray-50 ">
-                  {row.npm}
+                  {row.nama_lengkap}
+                </td>
+                <td className="text-sm border-2 border-white bg-gray-50 ">
+                  {row.npm ? row.npm : row.nidn}
+                  <span className="block font-bold">{row.role}</span>
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50 max-w-[20rem]">
                   <p className="truncate">{row.judul_kegiatan}</p>
@@ -199,6 +210,18 @@ export default function PengabdianModule({ baseURL }) {
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50">
                   <div className="flex items-stretch gap-1">
+                    <Button.Icon
+                      as="a"
+                      href={`${baseURL}/detail-pengabdian/${row.pengabdian_id}`}
+                      variant="info"
+                      icon={
+                        <Icon
+                          icon="fluent:info-24-filled"
+                          width={20}
+                          height={20}
+                        />
+                      }
+                    />
                     <Button.Icon
                       variant="success"
                       type="button"

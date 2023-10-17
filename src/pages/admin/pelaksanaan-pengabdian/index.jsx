@@ -3,7 +3,7 @@ import Layout from "../../../components/Layout";
 import PageHeader from "../../../components/PageHeader";
 import useUser from "../../../hooks/useUser";
 import PengabdianModule from "../../../modules/admin/pelaks-pengabdian/pengabdian/index";
-import PembicaraModule from "../../../modules/pelaksanaan-pengabdian/pembicara";
+import PembicaraModule from "../../../modules/admin/pelaks-pengabdian/pembicara/index";
 
 export default function PelaksanaanPengabdian() {
   const { user } = useUser({ redirectTo: "/login" });

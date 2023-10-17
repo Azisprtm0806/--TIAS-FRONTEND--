@@ -61,14 +61,14 @@ export default function IpCreate() {
                 value={form.semester}
                 onChange={inputHandler}
                 options={[
-                  { label: "Semester 1", value: "Semster 1" },
-                  { label: "Semester 2", value: "Semster 2" },
-                  { label: "Semester 3", value: "Semster 3" },
-                  { label: "Semester 4", value: "Semster 4" },
-                  { label: "Semester 5", value: "Semster 5" },
-                  { label: "Semester 6", value: "Semster 6" },
-                  { label: "Semester 7", value: "Semster 7" },
-                  { label: "Semester 8", value: "Semster 8" },
+                  { label: "Semester 1", value: "Semester 1" },
+                  { label: "Semester 2", value: "Semester 2" },
+                  { label: "Semester 3", value: "Semester 3" },
+                  { label: "Semester 4", value: "Semester 4" },
+                  { label: "Semester 5", value: "Semester 5" },
+                  { label: "Semester 6", value: "Semester 6" },
+                  { label: "Semester 7", value: "Semester 7" },
+                  { label: "Semester 8", value: "Semester 8" },
                 ]}
               />
             </Form.Group>

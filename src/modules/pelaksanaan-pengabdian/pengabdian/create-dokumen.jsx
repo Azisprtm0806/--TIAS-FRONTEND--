@@ -28,7 +28,7 @@ export default function CreateDokumen({ id }) {
     <>
       <Button.Icon
         variant="primary"
-        icon={<Icon icon="bx:edit" width={20} height={20} />}
+        icon={<Icon icon="typcn:plus" width={20} height={20} />}
         onClick={toggle}
       />
       <Modal title="Unggah Dokumen" show={show} handler={toggle}>

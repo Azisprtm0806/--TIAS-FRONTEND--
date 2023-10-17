@@ -511,8 +511,8 @@ export default function PublikasiKaryaCreate() {
                     name="penulis_mahasiswa.urutan"
                     onChange={inputHandler}
                     value={form.penulis_mahasiswa[index].urutan}
+                    required
                   />
-                  required
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50">
                   <Form.Input
@@ -521,8 +521,8 @@ export default function PublikasiKaryaCreate() {
                     name="penulis_mahasiswa.afiliasi"
                     onChange={inputHandler}
                     value={form.penulis_mahasiswa[index].afiliasi}
+                    required
                   />
-                  required
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50">
                   <Form.Select

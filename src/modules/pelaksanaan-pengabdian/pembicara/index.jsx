@@ -28,7 +28,6 @@ export default function PembicaraModule({ baseURL }) {
   } = useDatatable(DATA_URL);
   const { destroy } = useCRUD(DELETE_URL);
 
-  console.log(data);
 
   return (
     <>

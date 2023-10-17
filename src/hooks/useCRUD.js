@@ -42,6 +42,7 @@ export const useCRUD = (API_URL, INITIAL_FORM, options = INITIAL_OPTIONS) => {
         url: `${API_URL}/${id}`,
         params: { ...params },
       });
+
       const response = await request.data;
 
       MySwal.close();
@@ -70,11 +71,10 @@ export const useCRUD = (API_URL, INITIAL_FORM, options = INITIAL_OPTIONS) => {
           method: "DELETE",
           url: `${API_URL}/${id}`,
         });
+
         const response = await request.data;
 
         MySwal.close();
-
-        console.log(request)
         return toastAlert("success", response.message, 2000);
       } catch (error) {
         if (error.name == "AxiosError" && error?.response)

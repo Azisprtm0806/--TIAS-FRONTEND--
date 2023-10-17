@@ -110,6 +110,9 @@ export default function IPModule({ baseURL }) {
               </div>
             </th>
             <th className="text-sm border-2 border-white bg-gray-200">
+              <div className="flex items-center gap-2 cursor-pointer">Nama</div>
+            </th>
+            <th className="text-sm border-2 border-white bg-gray-200">
               <div className="flex items-center gap-2 cursor-pointer">NPM</div>
             </th>
             <th className="text-sm border-2 border-white bg-gray-200">
@@ -189,7 +192,11 @@ export default function IPModule({ baseURL }) {
                   )}
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50 max-w-[8rem] truncate">
-                  <p className="truncate">{row.npm}</p>
+                  {row.nama_lengkap}
+                </td>
+                <td className="text-sm border-2 border-white bg-gray-50 max-w-[8rem] truncate">
+                  {row.npm}
+                  <span className="block font-bold">{row.role}</span>
                 </td>
                 <td className="text-sm border-2 border-white bg-gray-50 max-w-[8rem] truncate">
                   <p className="truncate">{row.semester}</p>
